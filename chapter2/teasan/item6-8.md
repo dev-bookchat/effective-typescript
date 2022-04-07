@@ -27,3 +27,31 @@
 - 타입으로 쓰이는 `this`는 '다형성 this'라고 불리는 `this`의 타입스크립트 타입이다.
 
 </br>
+
+## 스터디 정리
+
+- `type` 은 값들의 타입을 넣을 때 사용.
+- `interface` 는 객체 타입에서만 사용, 주로 객체의 역할을 부여할 때 사용.
+
+### `enum` 대신 `union` 타입을 쓰는 이유
+
+> `enum` 은 enumerated type(열거형)을 의미.
+
+```js
+type Vote = -1 | 0 | 1;
+
+function voting(vote: number) {
+  console.log(vote);
+}
+
+voting(3); // 정상적으로 동작
+```
+
+```js
+type Vote = -1 | 0 | 1;
+function voting(vote: Vote) {
+  console.log(vote);
+}
+
+voting(3); // type error!!
+```
