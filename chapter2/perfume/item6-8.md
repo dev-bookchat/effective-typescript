@@ -31,7 +31,15 @@ death?: Date;
 type PersonSpan = Person & Lifespan;
 ```
 
-언뜻 봤을 때는 Person과 Lifespan 인터페이스는 공통으로 가지는 속성이 없기 때문에 PersonSpan 타입이 공집합(never 타입)처럼 보일 수 있습니다. 하지만 앞서 말했듯 타입 연산자는 값의 집합에 적용되기 때문에 아래와 같은 코드가 정상적으로 작동합니다.
+언뜻 봤을 때는 Person과 Lifespan 인터페이스는 공통으로 가지는 속성이 없기 때문에 PersonSpan 타입이 공집합(never 타입)처럼 보일 수 있습니다. PersonSpan의 범위를 오렌지색으로 표현한다면 아래 그림 같을 거라고 생각하기 때문이죠.
+
+![](https://velog.velcdn.com/images/perfumellim/post/15bfce53-37bb-449e-9fb8-403cb832b7a2/image.jpg)
+
+하지만 실제로는 다음 그림에 가깝습니다.
+
+![](https://velog.velcdn.com/images/perfumellim/post/fb620a37-d963-4b43-851d-275bb5cbbdf4/image.jpg)
+
+그래서 아래와 같은 코드가 정상적으로 작동합니다.
 
 ```
 const ps: PersonSpan = {
@@ -41,7 +49,7 @@ death: new Date('2000/01/19').
 };
 ```
 
-앞의 세 가지보다 더 많은 속성을 가지는 값도 PersonSpan 타입에 속합니다.
+(앞의 세 가지보다 더 많은 속성을 가지는 값도 PersonSpan 타입에 속합니다.)
 
 타입이 집합이라는 관점은 이외의 다른 개념들도 명확하게 이해할 수 있도록 돕습니다. 'A는 B를 상속', 'A는 B에 할당 가능', 'A는 B의 서브타입' 등의 말은 결국 A는 B의 부분 집합이라는 뜻입니다.
 
