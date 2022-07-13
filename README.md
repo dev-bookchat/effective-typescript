@@ -20,15 +20,11 @@
 
 ```
 ├── chapter2
-│   ├── biscuit
-│   ├── justie
 │   ├── lado
 │   ├── leo
-│   ├── nibble
 │   ├── paraffin
 │   ├── penguin
 │   ├── perfume
-│   ├── ramgee
 │   ├── rebolution
 │   ├── reyou
 │   ├── teasan
